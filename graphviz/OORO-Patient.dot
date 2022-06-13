@@ -1,0 +1,55 @@
+digraph {
+  node [ shape=box ];
+  edge [ style=solid ];
+  
+  "Homo Sapiens \n NBCITaxon:9609" -> "patient role \n OBI:0000093" [label="has role \n RO:0000087"];
+  "Homo Sapiens \n NBCITaxon:9609" -> 
+    "sex for clinical use GSSO:009428 \n AND
+    female PATO:0000383
+    male PATO:0000384" 
+    [label="has quality \n RO:0000086"];
+  "Homo Sapiens \n NBCITaxon:9609" -> 
+    "Race NCIT:C16495 \n AND
+    American Indian or Alaska Native NCIT:C41259 
+    Asian NCIT:C41260 
+    Black or African American NCIT:C16352
+    Native Hawaiian or Other Pacific Islander NCIT:C41219
+    White NCIT:C41261 
+    Other race NCIT:C104495" 
+    [label="member of \n RO:0002350"];
+  "Homo Sapiens \n NBCITaxon:9609" -> 
+    "Ethnic Group NCIT:C16495 \n AND
+    Hispanic or Latino NCIT:C17459 
+    Not Hispanic or Latino NCIT:C41222" 
+    [label="member of \n RO:0002350"];
+  "Homo Sapiens \n NBCITaxon:9609" -> "Identifier \n IAO:0020000" [label="denoted by \n IAO:0000235"];
+  "Identifier \n IAO:0020000" -> "xsd:string \n e.g. a medical record number  or anonymous identifier" [label="has representation \n OBI:0002815"];
+  "Identifier \n IAO:0020000" -> "assigning a centrally registered identifier \n IAO:0000574" [label="is_specified_output_of \n OBI:0000312"];
+  "assigning a centrally registered identifier \n IAO:0000574" -> "Hospital \n OBI:0000844" [label="has participant \n RO:0000057"];
+  "Identifier \n IAO:0020000" -> "act of anonymizing \n ICO:0000217" [label="is_specified_output_of \n OBI:0000312"];
+  "Homo Sapiens \n NBCITaxon:9609" -> "given name \n IAO:0020016" [label="denoted by \n IAO:0000235"];
+  "Homo Sapiens \n NBCITaxon:9609" -> "family name \n IAO:0020017" [label="denoted by \n IAO:0000235"];
+  "given name \n IAO:0020016" -> "xsd:string \n e.g. Marie" [label="has representation \n OBI:0002815"];
+  "family name \n IAO:0020017" -> "xsd:string \n e.g. Skłodowska" [label="has representation \n OBI:0002815"];
+  "Homo Sapiens \n NBCITaxon:9609" -> "neonate stage \n UBERON:007221 (import from OPMI)" [label="participates in \n RO:0000056"];
+  "neonate stage \n UBERON:007221 (import from OPMI)" -> "one-dimensional temporal region \n BFO:0000038 (Birth)" [label="occupies temporal region \n BFO:0000155"];
+  "one-dimensional temporal region \n BFO:0000038 (Birth)" -> "zero-dimensional temporal region \n BFO:0000148 (Birth Date)" [label="starts with \n RO:0002224"];
+  "zero-dimensional temporal region \n BFO:0000148 (Birth Date)" -> "xsd:date \n e.g. 1867-11-07" [label="has specified value \n OBI:0002135"];
+  "Homo Sapiens \n NBCITaxon:9609" -> "death stage \n UBERON:0000071 (import from OPMI)" [label="participates in \n RO:0000056"];
+  "death stage \n UBERON:0000071 (import from OPMI)" -> "one-dimensional temporal region \n BFO:0000038 (Death)" [label="occupies temporal region \n BFO:0000155"];
+  "one-dimensional temporal region \n BFO:0000038 (Death)" -> "zero-dimensional temporal region \n BFO:0000148 (Death Date)" [label="starts with \n RO:0002224"];
+  "zero-dimensional temporal region \n BFO:0000148 (Death Date)" -> "xsd:date \n e.g. 1934-07-04" [label="has specified value \n OBI:0002135"];
+  "Homo Sapiens \n NBCITaxon:9609" -> "cause of death status OPMI:0000543 \n AND \n disposition  (incl. descendants) BFO:0000091" [label="has disposition \n RO:0000091"];
+  "Treatment \n OGMS:0000090" -> "cause of death status OPMI:0000543 \n AND \n disposition  (incl. descendants) BFO:0000091" [label="realizes \n RO:0000056"];
+  "Homo Sapiens \n NBCITaxon:9609" -> "age \n PATO:0000011 (age at death)" [label="has quality \n RO:0000086"];
+  "scalar value specification \n OBI:0001931" -> "age \n PATO:0000011 (age at death)" [label="specifies value of \n OBI:0001927"];
+  "scalar value specification \n OBI:0001931" -> "time unit \n UO:0000003" [label="has measurement unit label \n IAO:0000039"];
+  "scalar value specification \n OBI:0001931" -> "xsd:decimal e.g. 66" [label="has specified value \n OBI:0002135"];
+  "age measurement assay \n OBI:0001158" -> "age measurement datum \n OBI:0001167" [label="has specified output \n OBI:0000299"];
+  "age measurement assay \n OBI:0001158" -> "Homo Sapiens \n NBCITaxon:9609" [label="has specified input \n OBI:0000293"];
+  "age measurement datum \n OBI:0001167"-> "age \n PATO:0000011(age at death)" [label="is quality measurement of \n IAO:0000221"];
+  "age measurement datum \n OBI:0001167"-> "scalar value specification \n OBI:0001931" [label="has value specification \n OBI:0001938"];
+  "age measurement datum \n OBI:0001167" -> "death stage \n UBERON:0000071 (import from OPMI)" [label="is about \n IAO:0000136"];
+
+
+}

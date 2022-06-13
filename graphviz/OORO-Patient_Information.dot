@@ -1,0 +1,14 @@
+digraph {
+  node [ shape=box ];
+  edge [ style=solid ];
+  
+  "Homo Sapiens \n NBCITaxon:9609" -> "mass \n PATO:0000125" [label="has quality \n RO:0000086"];
+  "mass value specification \n OBI:0001929" -> "mass \n PATO:0000125" [label="specifies value of \n OBI:0001927"];
+  "mass value specification \n OBI:0001929" -> "mass unit \n UO:0000002" [label="has measurement unit label \n IAO:0000039"];
+  "mass value specification \n OBI:0001929" -> "xsd:decimal e.g. 70.3" [label="has specified value \n OBI:0002135"];
+  "mass measurement assay \n OBI:0000445" -> "mass measurement datum \n IAO:0000414" [label="has specified output \n OBI:0000299"];
+  "mass measurement assay \n OBI:0000445" -> "Homo Sapiens \n NBCITaxon:9609" [label="has specified input \n OBI:0000293"];
+  "mass measurement datum \n IAO:0000414"-> "mass \n PATO:0000125" [label="is quality measurement of \n IAO:0000221"];
+  "mass measurement datum \n IAO:0000414"-> "mass value specification \n OBI:0001929" [label="has value specification \n OBI:0001938"];
+
+}
